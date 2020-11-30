@@ -8,9 +8,9 @@
 ## **Authors:**
 
 
-### ** Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr **
+### **Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr**
 
-### ** Meriç LOMLU --------------> mericlomlu@gmail.com**
+### **Meriç LOMLU --------------> mericlomlu@gmail.com**
 
 ### **Merve Nur TELLİ ----------> mervetelli0@gmail.com**
 
