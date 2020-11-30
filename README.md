@@ -1,5 +1,5 @@
 # Theremin AI
- ##**FENG497 Project**
+ ## **FENG497 Project**
 
 
  Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr
