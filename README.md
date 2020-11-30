@@ -9,19 +9,9 @@
  Merve Nur TELLİ ----------> mervetelli0@gmail.com
  
  
- 
- 
- ## **IZMIR UNIVERSITY OF ECONOMICS**
 
-## **FACULTY OF ENGINEERING**
 
-## **SOFTWARE ENGINEERING**
-
-# **FENG 497 PROJECT PROPOSAL**
-
-![](RackMultipart20201130-4-1hznbhu_html_8f64d51b3f4fb086.png)
-
-Theremin.AI: CNN Based Instrument with Monocular RGB Camera
+# **Theremin.AI: CNN Based Instrument with Monocular RGB Camera**
 
 Authors:
 
