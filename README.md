@@ -1,17 +1,18 @@
  :zap:
  
- Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr
 
- Meriç LOMLU --------------> mericlomlu@gmail.com
-
- Merve Nur TELLİ ----------> mervetelli0@gmail.com
  
 
 # **Theremin.AI: CNN Based Instrument with Monocular RGB Camera**
 
 ## **Authors:**
 
-### **Bedirhan Ziran ELBAN, Meriç LOMLU, Merve Nur TELLİ**
+
+### ** Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr **
+
+### ** Meriç LOMLU --------------> mericlomlu@gmail.com**
+
+### **Merve Nur TELLİ ----------> mervetelli0@gmail.com**
 
 ## **Supervisor:**
 
@@ -39,7 +40,7 @@ _ **Keywords-- hand detection, hand depth estimation, distance estimation, compu
 
 Theremin (or Thermenvox, or Aetherphone) is an analog instrument that is classified as Hornbostel-Sachs 531.1 (Electrophone), invented by a Russian scientist named Léon Theremin. It is also creating a sound but the invention is different from other instruments. Without touching or hitting any keys, strings, or percussive elements, the player must use a different interface to create a sound.
 
-In the system, antennas are designed to operate the instrument as an interface that creates electric fields. The instrument has two Antennas that are differently \*\*positioned\*\*. One is horizontally and the other is vertically positioned on the system. The horizontal antenna controls the Amplitude or Volume and the vertical antenna controls the Pitch or Frequency. The sound of the instrument is based on electronic oscillators. To create an oscillator sound, it uses a specified resonant circuit that specializes to sense objects and it&#39;s resonance value. Objects are used as capacitors to create an analog signal. Also, the output sound is most likely a fretless instrument.
+In the system, antennas are designed to operate the instrument as an interface that creates electric fields. The instrument has two Antennas that are differently positioned. One is horizontally and the other is vertically positioned on the system. The horizontal antenna controls the Amplitude or Volume and the vertical antenna controls the Pitch or Frequency. The sound of the instrument is based on electronic oscillators. To create an oscillator sound, it uses a specified resonant circuit that specializes to sense objects and it&#39;s resonance value. Objects are used as capacitors to create an analog signal. Also, the output sound is most likely a fretless instrument.
 
 ![](https://ethw.org/w/images/7/71/Leon_Theremin.jpg)
 
