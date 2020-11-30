@@ -83,7 +83,7 @@ Then we surveyed Estimating 3D Hand Pose from a Cluttered Image [13]. In this wo
 
 Finally, there is a CNN Based Posture-Free Hand Detection [14] article. They used Convolutional Neural Network-based work without posture and sensitive data concern. Also, the interesting part is, they compared two different libraries and performance. Their benchmarking libraries are CUDA and TensorFlow. Also, they have great results with a 4th Generation Mobile Intel i7 CPU without using any enthusiastic Graphics Processing Unit like Nvidia Titan X. The literature survey we did here is only a part of our study. We filtered what we need in the future.
 
-
+## **6. Risk Analysis**
 
 There are few risks possible that can cause us to fail for this project. The greatest risk above them is the camera position and choosing a specific camera. For example, if we use a FOV camera like a fish-eye lens or locate the camera in the wrong position, it can cause pixel stretching for the image and we might not get accurate results. There is a risk of getting fast and hand recognition and getting accurate hand depth values. We need boundaries for accurate hand depth values. Our equipment may be insufficient for this project. Finally, there is always the risk of going beyond the scope of the project. In other words, we can deviate from our goal. For the last two risks if they are happening we make a mistake somewhere. Our plan B is listed as follows:
 
