@@ -9,7 +9,7 @@
 
     4. Image names MUST BE UNIQUE, We don't want to have confliction in future when we have a dataset pool
 
-    5. Labels files must be PASCAL VOC XML 
+    5. Labels files must be .json 
 
     6. Label file names must be same with the image file names
 
