@@ -14,7 +14,7 @@ from PIL import Image
 import os
 import argparse
 
-def rescale_images(directory, out, size):
+def rescale_process(directory, out, size):
     
     dirs = os.listdir(directory)
     
@@ -23,11 +23,11 @@ def rescale_images(directory, out, size):
         im_resizer = im.resize(size, Image.ANTIALIAS)
         im_resizer.save(out + img)
         
-    print('Image Resizing Process is Done')
+    print('Process is Done')
     
 
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description="Rescale Images")
     args = parser.parse_args()
-    rescale_images('_raw/', '_resized/', (800, 600))
+    rescale_process('_raw/', '_resized/', (800, 600))
