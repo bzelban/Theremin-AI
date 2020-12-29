@@ -2,9 +2,10 @@
 #           TO USE THIS SCRIPT
 """
     1- run "pip3 install Pillow"
-    2- Copy raw images to _raw folder
-    3- Run script only
-    4- Take resized images from _resized folder
+    2- if there is no _raw/ folder, create it
+    3- Copy raw images to _raw folder
+    4- Run script only
+    5- Take resized images from _resized folder
     
     This Script will resize the photos automatically
 """
