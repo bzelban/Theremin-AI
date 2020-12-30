@@ -14,7 +14,7 @@ from PIL import Image
 import os
 import argparse
 
-def rescale_process(directory, out, size):
+def rescale_process(directory, out, size):W
     
     dirs = os.listdir(directory)
     
