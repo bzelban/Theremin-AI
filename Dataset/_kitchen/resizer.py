@@ -6,7 +6,7 @@
     3- Copy raw images to _raw folder
     4- Run script only
     5- Take resized images from _resized folder
-    
+
     This Script will resize the photos automatically
 """
 
