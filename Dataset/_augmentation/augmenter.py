@@ -10,7 +10,7 @@
 import numpy as np
 import os
 import imgaug as ia
-import imgaug.augmenter as iaa
+import imgaug.augmenters as iaa
 import argparse
 
 ia.seed(1)
