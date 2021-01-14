@@ -12,11 +12,11 @@ import os
 from imgaug import augmenters as iaa
 import argparse
 
-ia.seed(1)
+iaa.seed(1)
 
 
 images = np.array(
-    [ia.quokka(size=(64, 64)) for _ in range(32)],
+    [iaa.quokka(size=(64, 64)) for _ in range(32)],
     dtype=np.uint8
 
 
