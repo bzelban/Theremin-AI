@@ -9,14 +9,15 @@
 
 import numpy as np
 import os
-from imgaug import augmenters as iaa
+import imgaug as ia
+import imgaug.augmenter as iaa
 import argparse
 
-iaa.seed(1)
+ia.seed(1)
 
 
 images = np.array(
-    [iaa.quokka(size=(64, 64)) for _ in range(32)],
+    [ia.quokka(size=(64, 64)) for _ in range(32)],
     dtype=np.uint8
 
 
