@@ -1,7 +1,7 @@
 """
     1- run "pip3 install imgaug"
 
-    This Script will Augment the photos in the 
+    This Script will Augment the photos in the
     sake of dataset variety
 """
 
