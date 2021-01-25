@@ -24,7 +24,7 @@ images = np.array(
 
 sequence = iaa.Sequential([
     iaa.Sometimes(0.5,
-        iaa.GaussianBlue(sigma=(0, 0.5)),
+        iaa.GaussianBlur(sigma=(0, 0.5)),
         iaa.LinearContrast(0.75, 1.5),
         iaa.Multiply((0.8, 1.2), per_channel=0.2),
 
