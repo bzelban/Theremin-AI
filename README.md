@@ -1,8 +1,3 @@
- :zap:
- 
-
- 
-
 # **Theremin.AI: CNN Based Instrument with Monocular RGB Camera**
 
 ## **Authors:**
