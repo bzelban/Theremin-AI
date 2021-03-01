@@ -169,7 +169,7 @@ For this module, we will modify and use a Python Script that one of us created b
 
 Hardware is a Monocular RGB camera that streams the real-time data from outside of the CNN HAND DETECTION MODULE of the system and a speaker that creates the sound of what we estimated from hands by OSCILATOR MODULE.
 
-## **8 Result and Discussion**
+## **8. Result and Discussion**
 
 For the sake of feasibility, we tested some of our devices to see the performance if we want to use an ARM machine to prototype our system. We choose to test the hardware with a basic image classification algorithm with Quantized Classification Model and the same Python Environment and TensorFlow Lite libraries by only using CPU power. Our choice of hardware is a Raspberry Pi 3B+ and a Thinkpad E490. Detailed Specs are Below:
 
@@ -180,10 +180,10 @@ For the sake of feasibility, we tested some of our devices to see the performanc
 *Graphics:* OpenGL ES 1.1, 2.0
 
 **Thinkpad E490 Specs:**    
-*CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
-*RAM:* 16GB DDR4-2400   
-*Camera:* Integrated Webcam   
-*Graphics:* Intel UHD Graphics 620
+#### *CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
+#### *RAM:* 16GB DDR4-2400   
+#### *Camera:* Integrated Webcam   
+#### *Graphics:* Intel UHD Graphics 620
 
 There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well. 
 
@@ -191,7 +191,7 @@ As a result of benchmarks, Thinkpad E490 handles the test well with near-zero la
 
 With these results, we understand that combining Computer Vision with Machine Learning Applications need intense processing power even in the most optimized way. This test environment is also about classification but isn’t Mask R-CNN, which means the benchmark results may differ after we apply our model and modules. This is a preliminary study and with this study, we understand that, before the prototyping stage, the hardware choice can be a milestone for the project, also some problems may appear and some solutions can change in the future.
 
-## **9 Conclusion**
+## **9. Conclusion**
 
 In this study, we wanted to create a Theremin-like instrument that takes gestures as input. The reason we are doing this project is we wanted to combine the advancing technology with Theremin and create something new undone before. With this idea, we wanted to touch everyone’s souls because music heals the soul. Theremin.AI can be used by anyone who has a monocular RGB camera, without touching anything, just by their gestures.
 
@@ -203,7 +203,7 @@ Of course, it will be toilsome to perform an application that has been undone be
 
 
 
-## **11. REFERENCES**
+## **10. REFERENCES**
 
 [1] Léon Theremin. (2016) Engineering and Technology History Wiki [Online]. Available: [https://ethw.org/Leon\_Theremin](https://ethw.org/Leon_Theremin)
 
