@@ -26,11 +26,11 @@
 7. Methodology
     1. Prepare Statement
     2. System Architecture
-      1. Mask R-CNN Training Module
-      2. CNN Hand Detection Module
-      3. Hand Distance Estimation Module
-      4. Hand Depth Estimation Module
-      5. Oscilator Module
+        1. Mask R-CNN Training Module
+        2. CNN Hand Detection Module
+        3. Hand Distance Estimation Module
+        4. Hand Depth Estimation Module
+        5. Oscilator Module
 8. Result and Discussion
 9. Conclusion
 10. References
