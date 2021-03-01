@@ -23,7 +23,17 @@
 4. Scope of the Work
 5. Literature Survey
 6. Risk Analysis
-7. References
+7. Methodology
+  1. Prepare Statement
+  2. System Architecture
+    1. Mask R-CNN Training Module
+    2. CNN Hand Detection Module
+    3. Hand Distance Estimation Module
+    4. Hand Depth Estimation Module
+    5. Oscilator Module
+8. Result and Discussion
+9. Conclusion
+10. References
 
 ## **1.Abstract**
 
@@ -91,7 +101,109 @@ Hand Recognition and Accurate Hand Depth and Distance: We can train the NN more 
 
 Going Beyond the Scope: We can go back to our original purpose. A quick recap or seek more works in the field.
 
-## **7. REFERENCES**
+## **7. Methodology**
+
+Our first approach was making a literature survey, details of it are in section 3. We researched academic papers that are closer to our project idea. We then decided to focus on the CNN Based Posture-Free Hand Detection [14] article, because in our case that article was the closest one to ours. We tried to reach its creators for their dataset but we could not get a positive response. So we decided to create our own dataset. Details for creating our own dataset are given in section 4.1.
+
+Then we decided to use Mask R-CNN because we thought that when the camera sees hands from the bottom side, the borders of Mask R-CNN could help us to calculate distance more accurately. But then we met with another tool and decided to use this tool, again mentioned in section 4.1.
+
+Also, we started to think about prototyping. We thought that we can use the Coral Accelerator but we do not have a budget so we gave up this idea with the plugin idea. After that, we gave it a try with Raspberry Pi 3B+[15], on an Entry-Level laptop without GPU Acceleration. The results of the laptop were acceptable, we got a maximum of 14 fps. More information about this can be seen in section 5.
+
+On the other hand, we are trying to gain performance test results with a raspberry camera and laptop camera. We will compare these results with each other. We will set up the Tensorflow library and test videos for our project. 
+
+## **7.1. Prepare Dataset**
+
+Data preparation can be one of the most important steps in a machine learning project because each dataset must be different and specific. So we decided to create our own data set instead of using a standard dataset. Most machine learning algorithms require data to be formatted in a very specific way, so datasets often require some preparation before they can obtain useful information. We can start with questions like ”What kind of data should we collect?”, “How much data do we need?”.
+
+Large amounts of data and diversity are required for machine learning algorithms to work as intended. The diversity can help each procedure to guarantee a totally good machine learning: diversity of the training data ensures that the training data can provide more discriminative information for the model, diversity of the learned model (diversity in parameters of each model or diversity among different base models) makes each parameter/model capture unique or complement information and the diversity in inference can provide multiple choices each of which corresponds to a specific plausible local optimal result.
+
+Image of hands is important in our Project, we created our data sets from hands. We took videos of our own hands to create hand datasets then we made these videos into frames in the blender. program. We first resized the framed photos with the code we wrote to bring them into a format that we can test.
+
+But why do we need resizing? An answer to this question is simply given by this quote[16]. “ Resizing images is a critical preprocessing step in computer vision. Principally our machine learning models train faster on smaller images. An input image that is twice as large requires our network to learn from four times as many pixels, and that time adds up. Moreover, many deep learning model architectures require that our images are the same size and our raw collected images may vary in size.”
+
+We labeled them finally after sizing to create our dataset. We used the labelMe [17] tool for this.  Also, we used the semantic segmentation method while labeling the images. Semantic segmentation, or image segmentation, is the task of clustering parts of an image together that belong to the same object class. It is a form of pixel-level prediction because each pixel in an image is classified according to a category. 
+
+Since we ran out of dataset, we will code the image augmentation module for data augmentation. The reason for data augmentation is to ensure the diversity and increase of the data set available. If the model is supported with enough data, it can make more accurate predictions that are to say the more dataset means a more successful model. It is beneficial to generate new data by using the original data available. We will make the data augmentation by processing the existing images with various techniques. These techniques can be methods such as rotation, cropping, scaling.
+
+In an article we found, the importance of data augmentation was clearly explained with examples[18]. They assess a few strategies for preparing data augmentation with regards to improving the exhibition of a Convolutional Neural Network (CNN) in the area of fine-grain airplane characterization. They referred to randomizing training images as improving performance.
+
+The following figure shows an augmentation sequence that might be useful for many common experiments. It blurs and also changes the contrast as well as brightness.
+
+## **7.2. System Architecture**
+
+In the preparation of the implementation, we designed a system that includes four modules and two hardware to run our project. Also, aside module that trains our model with respect to the dataset we made. To understand the implementation, the system partially interacts with the world. Gets data from the World and creates listenable sound to the World. Then Hand Detection, Position Estimation, Sound Synthesis jobs are done by the software side of the implementation. Definition of the Modules and Hardware are:
+
+## **7.2.1. Mask R-CNN Training Module**
+
+This Module will train our model by the dataset we created with LabelMe. Training Module uses the images we labeled and label parameters of the images exported as .json files. The model which we trained with this Module will be used at CNN HAND DETECTION MODULE.
+
+Usage of this module is a one-time process to use our dataset before running in the system. The model that we trained with this module will be ready to use with TensorFlow Libraries. If the trained model from our dataset isn’t reliable for the system, we may need to find another ready-to-train Hand Datasets from other sources.
+
+## **7.2.2. CNN Hand Detection Module**
+
+This Module is assigned to detect and send the data to two different modules. The detection will be done by the Mask R-CNN technique with respect to our trained model. Also, this Module will recognize the position of the hands as RIGHT HAND and LEFT HAND to send proper data to the HAND DISTANCE ESTIMATION MODULE and HAND DEPTH ESTIMATION MODULE. 
+
+The data separation task will be done and tailored to send as if a hand is RIGHT-MOST-SIDE the data will send to HAND DISTANCE ESTIMATION, and if a hand is LEFT-MOST-SIDE the data will send to HAND DEPTH ESTIMATION MODULE.
+
+The data for the HAND DISTANCE MODULE is a single pixel position of the RIGHT-MOST-PIXEL of the RIGHT HAND on the video stream that Convoluted and extracted by CNN HAND DETECTION MODULE to make a calculation. Also, the data for the HAND DEPTH ESTIMATION MODULE is a total number of Convoluted Pixels will be sent continuously by CNN HAND DETECTION MODULE.
+
+This Module limits and stops the feed if the total hand count is more than two and less than two. This also controls unwanted data creation to handle further system crashes, miss calculations, and CPU overloading, because this module is going to be the most power-hunger module in the system we designed.
+
+## **7.2.3. Hand Distance Estimation Module**
+
+This Module only gets RIGHT-HAND DATA from CNN HAND DETECTION MODULE and makes an estimation between our imaginary boundary and the hand. The optimal boundary width going to be found when testing the system with respect to the camera position.
+
+The estimation will be calculated from Convoluted Hand Image’s RIGHT-MOST-PIXEL. With that estimation, the Module will calculate a frequency value by the estimation defines as PITCHVALUE and sends the data to the OSCILATOR MODULE. 
+
+## **7.2.4. Hand Depth Estimation Module**
+
+This Module only gets LEFT-HAND DATA from CNN HAND DETECTION MODULE and makes a depth estimation by the area artificially created by CNN HAND DETECTION MODULE. After calculating the estimation, the Module will initialize an amplitude value and sends the AMPLITUDEVALUE data to the OSCILATOR MODULE.
+
+The incoming data from the CNN HAND DETECTION MODULE is going to be the total number of Convoluted Pixels of LEFT HAND. We will find a way to calibrate and an algorithm to set the amplitude range in an optimal way. This value going to be found when testing the system.
+
+## **7.2.5. Oscilator Module**
+
+This Module gets AMPLIDUTEVALUE and PITCHVALUE as oscillation parameters, then calculates a continuous, smooth Sine Wave sound by using Fourier Transform Algorithms as a result by using the speaker of the system. For the implementation, we will just use a simple sound to show our result, but for the prototyping, we want to use combined, modern synthesized sounds like Analog Theremins.
+
+For this module, we will modify and use a Python Script that one of us created before as a Tone (Pitch) Generator[20]. But the modification must be designed as continuous and can handle NULL values for not returning random noise and we do not apply any Attack-Decay-Sustain-Release (ADSR) and Filter algorithms for the purpose of the project. Also, OSCILATOR MODULE’s design may differ in the future for a perfect output.
+
+Hardware is a Monocular RGB camera that streams the real-time data from outside of the CNN HAND DETECTION MODULE of the system and a speaker that creates the sound of what we estimated from hands by OSCILATOR MODULE.
+
+## **8 Result and Discussion**
+
+For the sake of feasibility, we tested some of our devices to see the performance if we want to use an ARM machine to prototype our system. We choose to test the hardware with a basic image classification algorithm with Quantized Classification Model and the same Python Environment and TensorFlow Lite libraries by only using CPU power. Our choice of hardware is a Raspberry Pi 3B+ and a Thinkpad E490. Detailed Specs are Below:
+
+*Raspberry Pi 3B+ Specs:*
+*CPU:*  A53/ARMv8 Quad-Core SoC 1,4GHz 64bit
+*RAM:* 1GB LPDDR2 SDRAM
+*Camera:* Pi Camera rev1.3 
+*Graphics:* OpenGL ES 1.1, 2.0
+
+*Thinkpad E490 Specs:*
+*CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit
+*RAM:* 16GB DDR4-2400
+*Camera:* Integrated Webcam
+*Graphics:* Intel UHD Graphics 620
+
+There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well. 
+
+As a result of benchmarks, Thinkpad E490 handles the test well with near-zero latency and smooth 12-13 Frames Per Seconds (Figure 10-11). On the other hand, Raspberry Pi 3B+ isn’t performed well for the test (Figure 7-8-9). The results are more than 1500 Milliseconds latency and only 1 Frame Per Second with a broken vision (Not enough computation power to refresh the frame, which makes two different frames as one to show and process ).  Also, most of the classifications are miss calculated. Results and CPU usages are below.
+
+With these results, we understand that combining Computer Vision with Machine Learning Applications need intense processing power even in the most optimized way. This test environment is also about classification but isn’t Mask R-CNN, which means the benchmark results may differ after we apply our model and modules. This is a preliminary study and with this study, we understand that, before the prototyping stage, the hardware choice can be a milestone for the project, also some problems may appear and some solutions can change in the future.
+
+## **9 Conclusion**
+
+In this study, we wanted to create a Theremin-like instrument that takes gestures as input. The reason we are doing this project is we wanted to combine the advancing technology with Theremin and create something new undone before. With this idea, we wanted to touch everyone’s souls because music heals the soul. Theremin.AI can be used by anyone who has a monocular RGB camera, without touching anything, just by their gestures.
+
+So we decided to use Convolutional Neural Network-based work with the RGB camera. The hand detection method will be provided with an RGB camera in our project. We will continue our way in the project with the python environment and the TensorFlow library. While creating our dataset, we used a blender to frame the videos we shot, and then we made ready the image classification in the pictures with the semantic segmentation method in the label tool. While creating the dataset, we also tested some of our devices for performance. We saw the shortcomings of the hardware we used to test it. We will continue to experiment to get the best performance we want for the prototyping.
+
+We focused on obtaining accurate results by applying our method to various benchmarks. In future work, we will start implementing our method and see new results.  When we reach the result we want after our first implementation, we will try prototyping for mobile devices. It will be a more realistic approach and more doable for Theremin.AI. 
+
+Of course, it will be toilsome to perform an application that has been undone before. If you want to see the construction of this unique project and follow the steps, you can find our reports, tests, discussions, dataset and works on Github as Theremin.AI [21]
+
+
+
+## **11. REFERENCES**
 
 [1] Léon Theremin. (2016) Engineering and Technology History Wiki [Online]. Available: [https://ethw.org/Leon\_Theremin](https://ethw.org/Leon_Theremin)
 
@@ -120,4 +232,7 @@ Going Beyond the Scope: We can go back to our original purpose. A quick recap or
 [13] V. Athitsos, S. Sclaroff. (2003) Estimating 3D Hand Pose from a Cluttered Image
 
 [14] R. Adiguna, Y. E. Soelistio. (2018) CNN Based Posture-Free Hand Detection
+
+[15] Raspberry Pi Foundation (2009) RaspberryPi 3B+ [Online]. Available: [https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
+
 
