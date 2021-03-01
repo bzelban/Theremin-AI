@@ -173,8 +173,8 @@ Hardware is a Monocular RGB camera that streams the real-time data from outside 
 
 For the sake of feasibility, we tested some of our devices to see the performance if we want to use an ARM machine to prototype our system. We choose to test the hardware with a basic image classification algorithm with Quantized Classification Model and the same Python Environment and TensorFlow Lite libraries by only using CPU power. Our choice of hardware is a Raspberry Pi 3B+ and a Thinkpad E490. Detailed Specs are Below:
 
-*Raspberry Pi 3B+ Specs:*
-*CPU:*  A53/ARMv8 Quad-Core SoC 1,4GHz 64bit
+*Raspberry Pi 3B+ Specs:* 
+*CPU:*  A53/ARMv8 Quad-Core SoC 1,4GHz 64bit  
 *RAM:* 1GB LPDDR2 SDRAM
 *Camera:* Pi Camera rev1.3 
 *Graphics:* OpenGL ES 1.1, 2.0
