@@ -180,7 +180,7 @@ For the sake of feasibility, we tested some of our devices to see the performanc
 *Graphics:* OpenGL ES 1.1, 2.0
 
 **Thinkpad E490 Specs:**    
-** *CPU:* ** Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
+*CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
 *RAM:* 16GB DDR4-2400   
 *Camera:* Integrated Webcam   
 *Graphics:* Intel UHD Graphics 620
