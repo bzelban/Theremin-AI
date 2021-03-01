@@ -235,4 +235,19 @@ Of course, it will be toilsome to perform an application that has been undone be
 
 [15] Raspberry Pi Foundation (2009) RaspberryPi 3B+ [Online]. Available: [https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
+[16] Joseph Nelson (2020) You Might Be Resizing Your Images Incorrectly. Available: [https://blog.roboflow.com/you-might-be-resizing-your-images-incorrectly/#:~:text=Resizing%20images%20is%20a%20critical,and%20that%20time%20adds%20up.](https://blog.roboflow.com/you-might-be-resizing-your-images-incorrectly/#:~:text=Resizing%20images%20is%20a%20critical,and%20that%20time%20adds%20up.)
+
+[17] K. Wada. [Online]. Available: [https://github.com/wkentaro/labelme](https://github.com/wkentaro/labelme)
+
+[18] R. Mash, B. Borghetti, J. Pecarani. (2016) Improved Aircraft Recognition for Aerial Refueling through Data Augmentation in Convolutional Neural Networks
+
+[19] User Benchmark (2011) Intel Core i7-4700HQ versus Intel Core i5-8265U [Online]. Available: [https://cpu.userbenchmark.com/Compare/Intel-Core-i7-4700HQ-vs-Intel-Core-i5-8265U/2728vsm566107](https://cpu.userbenchmark.com/Compare/Intel-Core-i7-4700HQ-vs-Intel-Core-i5-8265U/2728vsm566107)
+
+[20] B. Z. Elban. (2020) Synthetics [Online]. Available: [https://github.com/bzelban/Synthetics/blob/master/generator.py](https://github.com/bzelban/Synthetics/blob/master/generator.py)
+
+[21] B. Z. Elban, M. Lomlu, M. N. Telli. (2020) Theremin.AI [Online]. Available: [https://github.com/MerveTelli/Theremin-AI](https://github.com/MerveTelli/Theremin-AI)
+
+
+
+
 
