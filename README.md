@@ -169,6 +169,12 @@ For this module, we will modify and use a Python Script that one of us created b
 
 Hardware is a Monocular RGB camera that streams the real-time data from outside of the CNN HAND DETECTION MODULE of the system and a speaker that creates the sound of what we estimated from hands by OSCILATOR MODULE.
 
+The basic flow chart for Theremin.AI can be seen in figure 2 down below.
+
+<img src="https://user-images.githubusercontent.com/61708140/109522168-0cfa3b00-7abf-11eb-96cb-5078e43a3188.png" width="45%"></img> 
+
+**Figure 2:** Theremin.AI Flow Chart
+
 ## **8. Result and Discussion**
 
 For the sake of feasibility, we tested some of our devices to see the performance if we want to use an ARM machine to prototype our system. We choose to test the hardware with a basic image classification algorithm with Quantized Classification Model and the same Python Environment and TensorFlow Lite libraries by only using CPU power. Our choice of hardware is a Raspberry Pi 3B+ and a Thinkpad E490. Detailed Specs are Below:
