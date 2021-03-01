@@ -180,10 +180,10 @@ For the sake of feasibility, we tested some of our devices to see the performanc
 *Graphics:* OpenGL ES 1.1, 2.0
 
 **Thinkpad E490 Specs:**    
-#### *CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
-#### *RAM:* 16GB DDR4-2400   
-#### *Camera:* Integrated Webcam   
-#### *Graphics:* Intel UHD Graphics 620
+*CPU:* Intel i5-8265U Quad-Core 8 Thread 1,60GHz (w/ Turbo 3,90GHz) 64bit   
+*RAM:* 16GB DDR4-2400   
+*Camera:* Integrated Webcam   
+*Graphics:* Intel UHD Graphics 620
 
 There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well. 
 
