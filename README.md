@@ -127,7 +127,7 @@ But why do we need resizing? An answer to this question is simply given by this 
 
 We labeled them finally after sizing to create our dataset. We used the labelMe [17] tool for this.  Also, we used the semantic segmentation method while labeling the images. Semantic segmentation, or image segmentation, is the task of clustering parts of an image together that belong to the same object class. It is a form of pixel-level prediction because each pixel in an image is classified according to a category. 
 
-<img src="https://user-images.githubusercontent.com/61708140/109538887-a3cff300-7ad1-11eb-9170-3e4daf551a6a.JPG" width="45%"></img>
+<img src="https://user-images.githubusercontent.com/61708140/109538887-a3cff300-7ad1-11eb-9170-3e4daf551a6a.JPG" width="90%"></img> 
 
 **Figure 3-4:** Labeling in labelMe
 
@@ -206,17 +206,17 @@ For the sake of feasibility, we tested some of our devices to see the performanc
 
 There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well.
 
-<img src="https://user-images.githubusercontent.com/61708140/109538890-a5012000-7ad1-11eb-934a-cbc640910dc2.JPG" width="45%"></img>
+<img src="https://user-images.githubusercontent.com/61708140/109538890-a5012000-7ad1-11eb-934a-cbc640910dc2.JPG" width="90%"></img> 
 
 **Figure 7:** Benchmark scores between i7-4700HQ versus i5-8265U
 
 As a result of benchmarks, Thinkpad E490 handles the test well with near-zero latency and smooth 12-13 Frames Per Seconds (Figure 10-11). On the other hand, Raspberry Pi 3B+ isn’t performed well for the test (Figure 7-8-9). The results are more than 1500 Milliseconds latency and only 1 Frame Per Second with a broken vision (Not enough computation power to refresh the frame, which makes two different frames as one to show and process ).  Also, most of the classifications are miss calculated. Results and CPU usages are below.
 
-<img src="https://user-images.githubusercontent.com/61708140/109538894-a6324d00-7ad1-11eb-99a3-2fe1af4653dc.JPG" width="30%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538898-a6cae380-7ad1-11eb-9ea1-893283dce886.JPG" width="30%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538904-a7637a00-7ad1-11eb-9d87-ac143b00e54a.JPG" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/61708140/109538894-a6324d00-7ad1-11eb-99a3-2fe1af4653dc.JPG" width="90%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538898-a6cae380-7ad1-11eb-9ea1-893283dce886.JPG" width="90%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538904-a7637a00-7ad1-11eb-9d87-ac143b00e54a.JPG" width="90%"></img> 
 
 **Figure 8-9-10:** Raspberry Pi 3B+ Classification Benchmark Results
 
-<img src="https://user-images.githubusercontent.com/61708140/109538906-a7fc1080-7ad1-11eb-875b-1011af1846e3.JPG" width="45%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538908-a894a700-7ad1-11eb-8b63-59cac0983ea7.JPG" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/61708140/109538906-a7fc1080-7ad1-11eb-875b-1011af1846e3.JPG" width="90%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538908-a894a700-7ad1-11eb-8b63-59cac0983ea7.JPG" width="90%"></img> 
 
 **Figure 11-12:** Thinkpad E490 Classification Benchmark Results
 
