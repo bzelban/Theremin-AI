@@ -121,13 +121,26 @@ Image of hands is important in our Project, we created our data sets from hands.
 
 But why do we need resizing? An answer to this question is simply given by this quote[16]. “ Resizing images is a critical preprocessing step in computer vision. Principally our machine learning models train faster on smaller images. An input image that is twice as large requires our network to learn from four times as many pixels, and that time adds up. Moreover, many deep learning model architectures require that our images are the same size and our raw collected images may vary in size.”
 
+<img src="https://user-images.githubusercontent.com/61708140/109538884-a3375c80-7ad1-11eb-85df-84b688e20555.JPG" width="45%"></img>
+
+**Figure 2:** Code for Resizing
+
 We labeled them finally after sizing to create our dataset. We used the labelMe [17] tool for this.  Also, we used the semantic segmentation method while labeling the images. Semantic segmentation, or image segmentation, is the task of clustering parts of an image together that belong to the same object class. It is a form of pixel-level prediction because each pixel in an image is classified according to a category. 
+
+<img src="https://user-images.githubusercontent.com/61708140/109538887-a3cff300-7ad1-11eb-9170-3e4daf551a6a.JPG" width="45%"></img>
+
+**Figure 3-4:** Labeling in labelMe
 
 Since we ran out of dataset, we will code the image augmentation module for data augmentation. The reason for data augmentation is to ensure the diversity and increase of the data set available. If the model is supported with enough data, it can make more accurate predictions that are to say the more dataset means a more successful model. It is beneficial to generate new data by using the original data available. We will make the data augmentation by processing the existing images with various techniques. These techniques can be methods such as rotation, cropping, scaling.
 
 In an article we found, the importance of data augmentation was clearly explained with examples[18]. They assess a few strategies for preparing data augmentation with regards to improving the exhibition of a Convolutional Neural Network (CNN) in the area of fine-grain airplane characterization. They referred to randomizing training images as improving performance.
 
 The following figure shows an augmentation sequence that might be useful for many common experiments. It blurs and also changes the contrast as well as brightness.
+
+<img src="https://user-images.githubusercontent.com/61708140/109538889-a5012000-7ad1-11eb-851d-380c73812313.JPG" width="30%"></img>
+
+**Figure 5:** Image Augmentation Script
+
 
 ## **7.2. System Architecture**
 
@@ -173,7 +186,7 @@ The basic flow chart for Theremin.AI can be seen in figure 2 down below.
 
 <img src="https://user-images.githubusercontent.com/61708140/109522168-0cfa3b00-7abf-11eb-96cb-5078e43a3188.png" width="45%"></img> 
 
-**Figure 2:** Theremin.AI Flow Chart
+**Figure 6:** Theremin.AI Flow Chart
 
 ## **8. Result and Discussion**
 
@@ -191,9 +204,21 @@ For the sake of feasibility, we tested some of our devices to see the performanc
 *Camera:* Integrated Webcam   
 *Graphics:* Intel UHD Graphics 620
 
-There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well. 
+There are two different reasons to choose this hardware. The first reason is, the Thinkpad’s CPU performs nearly the same as the i7-4700HQ CPU[19], comparison of CPU benchmarks shown in Figure 6, which used in CNN Based Posture-Free Hand Detection[14] research and if we want to build a small, portable, easy-to-use prototype how the ARM machines perform for this situation or do they fit well.
+
+<img src="https://user-images.githubusercontent.com/61708140/109538890-a5012000-7ad1-11eb-934a-cbc640910dc2.JPG" width="45%"></img>
+
+**Figure 7:** Benchmark scores between i7-4700HQ versus i5-8265U
 
 As a result of benchmarks, Thinkpad E490 handles the test well with near-zero latency and smooth 12-13 Frames Per Seconds (Figure 10-11). On the other hand, Raspberry Pi 3B+ isn’t performed well for the test (Figure 7-8-9). The results are more than 1500 Milliseconds latency and only 1 Frame Per Second with a broken vision (Not enough computation power to refresh the frame, which makes two different frames as one to show and process ).  Also, most of the classifications are miss calculated. Results and CPU usages are below.
+
+<img src="https://user-images.githubusercontent.com/61708140/109538894-a6324d00-7ad1-11eb-99a3-2fe1af4653dc.JPG" width="30%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538898-a6cae380-7ad1-11eb-9ea1-893283dce886.JPG" width="30%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538904-a7637a00-7ad1-11eb-9d87-ac143b00e54a.JPG" width="30%"></img> 
+
+**Figure 8-9-10:** Raspberry Pi 3B+ Classification Benchmark Results
+
+<img src="https://user-images.githubusercontent.com/61708140/109538906-a7fc1080-7ad1-11eb-875b-1011af1846e3.JPG" width="45%"></img> <img src="https://user-images.githubusercontent.com/61708140/109538908-a894a700-7ad1-11eb-8b63-59cac0983ea7.JPG" width="45%"></img> 
+
+**Figure 11-12:** Thinkpad E490 Classification Benchmark Results
 
 With these results, we understand that combining Computer Vision with Machine Learning Applications need intense processing power even in the most optimized way. This test environment is also about classification but isn’t Mask R-CNN, which means the benchmark results may differ after we apply our model and modules. This is a preliminary study and with this study, we understand that, before the prototyping stage, the hardware choice can be a milestone for the project, also some problems may appear and some solutions can change in the future.
 
