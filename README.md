@@ -17,20 +17,20 @@
 
 1. Abstract
 2. Introduction
-  1. Problem Statement
-  2. Why Is This Project Worth Doing
+    1. Problem Statement    
+    2. Why Is This Project Worth Doing
 3. Objectives of the Project
 4. Scope of the Work
 5. Literature Survey
 6. Risk Analysis
 7. Methodology
-  1. Prepare Statement
-  2. System Architecture
-    1. Mask R-CNN Training Module
-    2. CNN Hand Detection Module
-    3. Hand Distance Estimation Module
-    4. Hand Depth Estimation Module
-    5. Oscilator Module
+    1. Prepare Statement
+    2. System Architecture
+      1. Mask R-CNN Training Module
+      2. CNN Hand Detection Module
+      3. Hand Distance Estimation Module
+      4. Hand Depth Estimation Module
+      5. Oscilator Module
 8. Result and Discussion
 9. Conclusion
 10. References
