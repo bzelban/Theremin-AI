@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>mt167.jpg</filename>
+	<path>C:\Users\merve\OneDrive\Masaüstü\olsunartık\train\mt167.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1600</width>
+		<height>1200</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hand</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>567</xmin>
+			<ymin>119</ymin>
+			<xmax>1323</xmax>
+			<ymax>1200</ymax>
+		</bndbox>
+	</object>
+</annotation>
