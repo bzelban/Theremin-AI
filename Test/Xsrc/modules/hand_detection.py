@@ -45,6 +45,7 @@ class Hand_Detection_Module():
                 cv2.waitKey(1)
 
             queue.put(res.multi_handedness)
+            # queue.put(res.multi_hand_landmarks)
             '''
             if (temp_position != None):
                 if (temp_position > 0 and temp_position < 640):

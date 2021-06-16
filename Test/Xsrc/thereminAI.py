@@ -6,6 +6,7 @@ from modules.estimation.depth_estimation import Hand_Depth_Estimation_Module
 from modules.estimation.distance_estimation import Hand_Distance_Estimation_Module
 
 from modules.oscillation.oscilator import Oscilator
+from modules.oscillation.midi_sender import Midi_Bridge_Module
 
 # Main Libraries
 import threading
@@ -29,6 +30,7 @@ def check_diff(tempQ):
         if hand_landmark != tempQ.get():
             current_parameters(tempQ.get())
             hand_landmark = tempQ.get()
+            print(hand_landmark)
         #print(hand_landmark)
         # tempQ.task_done()
 

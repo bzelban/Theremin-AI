@@ -36,4 +36,5 @@ soupsieve       2.2.1
 tzlocal         2.1
 urllib3         1.26.4
 wheel           0.36.2
+python-rtmidi    ~^
 WARNING: You are using pip version 21.1.1; however, version 21.1.2 is available.
