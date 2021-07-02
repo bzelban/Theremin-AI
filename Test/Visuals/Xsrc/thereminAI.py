@@ -13,7 +13,6 @@ import threading
 import queue as q
 
 
-
 # Module Construction
 HDM = Hand_Detection_Module() #
 
@@ -22,6 +21,7 @@ DEP = Hand_Depth_Estimation_Module()
 
 OSCM = Oscilator()
 # MBM = Midi_Bridge_Module()
+
 
 # MIDI Libraries
 import rtmidi
@@ -35,9 +35,13 @@ def current_parameters(dist_chunk, dept_chunk):
         PITCHVALUE = DEM.distance_estimation(dist_chunk.get())
         AMPLITUDEVALUE = DEP.depth_estimation(dept_chunk.get())
 
+        print(str(PITCHVALUE) + "   " + str(AMPLITUDEVALUE))
+
         if AMPLITUDEVALUE:
+            # print("Printing PITCH VALUE: " + str(PITCHVALUE))
+            # print("Printing AMPLITUDE VALUE: " + str(AMPLITUDEVALUE))
+
             if AMPLITUDEVALUE != 0:
-                pass
                 # MBM.send_midi(PITCHVALUE, AMPLITUDEVALUE)
                 midiout.send_message([0x90, PITCHVALUE, AMPLITUDEVALUE])
 
@@ -64,14 +68,8 @@ def theremin():
 
     print('\t\t\t\tThreads Created - RUNNING')
 
-    # print('Test Visuals')
-
-    # visual_thread = threading.Thread(tagret=HDM.visuals(), args=())
-
     detection_thread.start()
     parameter_thread.start()
-
-    # visual_thread.start()
 
 if __name__ == "__main__":
     theremin()
