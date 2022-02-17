@@ -3,7 +3,7 @@
 ## **Authors:**
 
 
-### **Bedirhan Ziran ELBAN -----> bedirhan.elban@std.ieu.edu.tr**
+### **Bedirhan Ziran ELBAN -----> bzelban92@gmail.com**
 
 ### **Meriç LOMLU --------------> mericlomlu@gmail.com**
 
